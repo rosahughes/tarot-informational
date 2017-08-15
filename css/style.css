@@ -1,12 +1,32 @@
 h1 {
-  font-family: 'Dancing Script', sans serif;
-  font-size: 40px;
+  font-family: 'Dancing Script', serif;
+  font-size: 48px;
+  color: #FC7000;
+  text-align: center;
+}
+h2{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  text-align: center;
 }
 body {
-  font-family: 'Open Sans', sans serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   }
+img#card1 {
+  width: 10%;
+  height: auto;
+  float: right;
+  padding: 10px;
+}
+img#card2 {
+  width: 10%;
+  height: auto;
+  float: left;
+  padding: 10px;
+}
 button.accordion {
+    font-size: 14px;
     background-color: #89D5E0;
     color: #F78E22;
     cursor: pointer;
@@ -34,4 +54,9 @@ button.accordion:after {
 }
 button.accordion.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+footer {
+  font-size: 12px;
+  background-color: #C1DDCC;
+  color: black;
 }
