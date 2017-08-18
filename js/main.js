@@ -1,14 +1,21 @@
-var acc = document.getElementsByClassName("accordion");
-var i;
+// *DOMContentLoaded
+document.addEventListener("DOMContentLoaded", function(event){
+  console.log("DOM fully loaded.");
+})
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
+// *Accordion menu funtion
+let accordion = document.querySelectorAll("#accordion");
+let i;
+
+for (i = 0; i < accordion.length; i++) {
+    accordion[i].onclick = function(){
+      console.log("Run accordion click function.");
         this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
+        let panel = this.nextElementSibling;
+        if (panel.style.display === "info-panel") {
+            panel.style.display = "none"; // *if un-clicked
         } else {
-            panel.style.display = "block";
+            panel.style.display = "info-panel"; // *if clicked
         }
     }
 }

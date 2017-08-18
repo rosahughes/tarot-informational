@@ -1,3 +1,6 @@
+div.heading {
+  display: inline-block;
+}
 h1 {
   font-family: 'Dancing Script', serif;
   font-size: 48px;
@@ -26,9 +29,9 @@ img#card2 {
   padding: 10px;
 }
 button.accordion {
-    font-size: 14px;
+    font-size: 16px;
     background-color: #89D5E0;
-    color: #F78E22;
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -44,12 +47,12 @@ div.panel {
     padding: 0 18px;
     background-color: #C1DDCC;
     display: none;
-    font-size: 12px;
+    font-size: 14px;
 }
 button.accordion:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
-    color: black;
+    color: #F78E22;
     float: right;
     margin-left: 5px;
 }
