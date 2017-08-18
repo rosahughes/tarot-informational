@@ -1,5 +1,5 @@
 // Accordion menu funtion
-let accordion = document.querySelectorAll(".accordion");
+let accordion = document.querySelectorAll("accordion");
 let i;
 
 for (i = 0; i < accordion.length; i++) {
