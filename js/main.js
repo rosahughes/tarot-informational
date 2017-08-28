@@ -1,7 +1,38 @@
 // DOMContentLoaded listener
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM loaded.");
-  })
+
+  // Accordion click funtion
+  let accordionContainer = document.querySelector('.container'); // For each HTML elem
+
+  for (let item of accordionData){
+    let button = document.createElement('button') 
+    button.setAttribute('class', 'accordion');
+    button.innerHTML = item.title;
+
+    button.onclick = function(){
+        console.log("Run accordion click function.");
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none"; // if un-clicked
+        } else {
+            panel.style.display = "block"; // if clicked
+        }
+    }
+
+    let panelDiv = document.createElement('div');
+    panelDiv.setAttribute('class', 'panel');
+
+    let content = document.createElement('p');
+    content.innerHTML = item.content;
+
+    panelDiv.appendChild(content);
+
+    accordionContainer.appendChild(button);
+    accordionContainer.appendChild(panelDiv);
+  }
+})
 
 // Data for accordion menu
 let accordionData = [
@@ -30,26 +61,4 @@ let accordionData = [
     
     content: "A variety of tarot designs exist and a number of typical regional patterns have emerged.     Historically, one of the most important designs is the one usually known as the Tarot de Marseille.     This standard pattern was the one studied by Court de Gébelin, and cards based on this style           illustrate his Le Monde primitif. Some current editions of cards go back to a deck of a particular     Marseille design that was printed by Nicolas Conver in 1760. Other regional styles include the         'Swiss' Tarot. This one substitutes Juno and Jupiter for the Papess, or High Priestess and the         Pope, or Hierophant. In Florence an expanded deck called Minchiate was used. This deck of 97 cards     includes astrological symbols including the four elements, as well as traditional tarot motifs.         Some decks exist primarily as artwork; and such art decks sometimes contain only the 22 trump           cards."
   },
-];
-
-// Accordion menu funtion
-let accordion = buildAccordionStructure(accordionData);
-let i;
-
-for (let value of i) {
-  i = 0; 
-  i < accordion.length; 
-  i++;
-}
-
- accordion[i].onclick = function(){
-     console.log("Run accordion click function.");
-       this.classList.toggle("active");
-       let panel = this.nextElementSibling;
-       if (panel.style.display === "block") {
-           panel.style.display = "none"; // if un-clicked
-       } else {
-           panel.style.display = "block"; // if clicked
-       }
-   }
-
+]
