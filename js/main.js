@@ -32,14 +32,16 @@ let accordionData = [
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM loaded.");
 
-  // Accordion click funtion
+  
+  // Identify accordionContainer to run in the index.html div with a class 'container' 
   let accordionContainer = document.querySelector('.container'); 
 
   for (let item of accordionData){
-    let button = document.createElement('button') 
+    let button = document.createElement('button') // Create button element in accordion
     button.setAttribute('class', 'accordion');
     button.innerHTML = item.title;
 
+  // Accordion click funtion on title button items 
     button.onclick = function(){
         console.log("Run accordion click function.");
         this.classList.toggle("active");
@@ -51,15 +53,16 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-    let panelDiv = document.createElement('div');
+    let panelDiv = document.createElement('div'); // Create panel element in accordion
     panelDiv.setAttribute('class', 'panel');
 
-    let content = document.createElement('p');
+    let content = document.createElement('p'); // Create a paragraph for each content item to display in the panelDiv
     content.innerHTML = item.content;
 
-    panelDiv.appendChild(content);
+    panelDiv.appendChild(content); // When a panel element is called via the onclick function on the title/button element, it will display the associated content
 
-    accordionContainer.appendChild(button);
+    // Set the buttons and panels as elements of the accordionContainer
+    accordionContainer.appendChild(button); 
     accordionContainer.appendChild(panelDiv);
   }
 })
